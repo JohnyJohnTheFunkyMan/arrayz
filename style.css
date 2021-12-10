@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --foreground: #73f3c2;
+  --background: #7830cd;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--foreground);
+  font-family: 'Lato';
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--background);
+  position: relative;
+  z-index: 2;
+
+  /* flex center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#text {
+  text-align: center;
+  font-weight: 900;
+  font-size: 10em;
+
+  position: relative;
+  z-index: 2;
+}
+
+#box {
+  padding: 1em 2em;
+  width: 20em;
+  font-size: 1.25em;
+  border-radius: 50px;
+  border: 1px solid white;
+  color: var(--background);
+
+  position: relative;
+  z-index: 2;
+}
+
+#btn {
+  margin-top: 1em;
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: 1em 2em;
+  border-radius:60px;
+  font-weight: 900;
+  font-size: 1.5em;
+  cursor: pointer;
+
+  position: relative;
+  z-index: 2;
+}
+
+div {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: 0.5s ease;
+}
+
+#box:focus ~ div {
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#box:focus + #btn {
+  z-index: 4;
+}
+
+#box:focus {
+  z-index: 4;
+}
